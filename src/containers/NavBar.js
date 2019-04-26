@@ -12,6 +12,7 @@ export default class NavBar extends React.Component{
     render(){
         return(
             <>
+            <h1>Hello from navbar</h1>
             </>
         )
     }

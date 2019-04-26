@@ -1,12 +1,22 @@
-import React from 'react';
+import React , { Component }from 'react';
+import NavBar from './containers/NavBar';
 
 
-function App() {
-  return (
-    <>
-    <h1>Hello world</h1>
-    </>
-  );
+class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+
+    }
+  }
+  render(){
+    return(
+      <>
+      <NavBar/>
+      </>
+    )
+  }
 }
 
 export default App;
