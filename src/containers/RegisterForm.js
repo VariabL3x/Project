@@ -1,5 +1,4 @@
 import React from 'react'
-import { FormGroup,Input,Label,Form} from 'reactstrap'
 
 export default class RegisterForm extends React.Component{
     constructor(props){
@@ -24,7 +23,7 @@ export default class RegisterForm extends React.Component{
 
     handleSubmit = (e) => {
         if(this.state.password === this.state.confirm_password){
-            
+
         }
     }
     render(){
