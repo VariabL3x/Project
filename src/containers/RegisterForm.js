@@ -12,26 +12,23 @@ export default class RegisterForm extends React.Component{
 
     render(){
         return(
-            <Form className="register-form-box shadow">
-                <FormGroup>
-                <Label>name</Label>
-                <Input/>
-                </FormGroup>
-                <FormGroup>
-                <Label>name</Label>
-                <Input/>
-                </FormGroup>
-                <FormGroup>
-                <Label>name</Label>
-                <Input/>
-                </FormGroup>
-                <FormGroup>
-                <Label>name</Label>
-                <Input/>
-                </FormGroup>
+            <form className="register-form-box">
+                <label>Username</label>
+                <input type="text"/>
 
-                
-            </Form>
+                <label>Email</label>
+                <input type="email"/>
+
+                <label>Password</label>
+                <input type="password"/>
+
+                <label>Confirm Password</label>
+                <input type="password"/>
+
+                <input type="submit" value="Register"/>
+
+                <a href="/login">Already have an account?</a>
+            </form>
         )
     }
 }
