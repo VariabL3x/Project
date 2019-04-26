@@ -1,5 +1,6 @@
 import React from 'react'
 import { Layout,Header,Navigation,Content } from 'react-mdl'
+import '../App.css'
 export default class NavBar extends React.Component{
     constructor(props){
         super(props)
@@ -13,7 +14,7 @@ export default class NavBar extends React.Component{
         return this.state.isLogin?( 
             <div style={{height: '80px', position: 'relative'}}>
                 <Layout fixedHeader>
-                    <Header title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>is log in</strong></span>}>
+                    <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>is log in</strong></span>}>
                         <Navigation>
                             <a href="/"><strong>Home</strong></a>
                             <a href="/"><strong>Post</strong></a>
@@ -26,7 +27,7 @@ export default class NavBar extends React.Component{
             </div>
         ) : <div style={{height: '100px', position: 'relative'}}>
                 <Layout fixedHeader>
-                    <Header title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>not logged in</strong></span>}>
+                    <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>not logged in</strong></span>}>
                         <Navigation>
                             <a href="/"><strong>Home</strong></a>
                             <a href="/login"><strong>Login</strong></a>

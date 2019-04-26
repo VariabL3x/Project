@@ -13,10 +13,10 @@ class App extends Component {
   }
   render(){
     return(
-      <>
-      <NavBar/>
-      <Main/>
-      </>
+      <div className="background-app">
+        <NavBar/>
+        <Main/>
+      </div>
     )
   }
 }
