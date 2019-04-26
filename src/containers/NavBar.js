@@ -24,7 +24,7 @@ export default class NavBar extends React.Component{
                     <Content />
                 </Layout>
             </div>
-        ) : <div style={{height: '100vh', position: 'relative'}}>
+        ) : <div style={{height: '100px', position: 'relative'}}>
                 <Layout fixedHeader>
                     <Header title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>not logged in</strong></span>}>
                         <Navigation>
