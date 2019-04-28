@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 export default class RegisterForm extends React.Component{
     constructor(props){
@@ -23,7 +24,18 @@ export default class RegisterForm extends React.Component{
 
     handleSubmit = (e) => {
         if(this.state.password === this.state.confirm_password){
-
+            let formData = new FormData()
+            formData.set('email',this.state.email)
+            formData.set('username',this.state.username)
+            formData.set('password',this.state.password)
+            axios({
+                method:"POST",
+                url:"http://localhost:5000/api/v1/users/",
+                data:formData,
+                config: { headers : {'Content-Type' : 'multipart/form-data'}}
+            }).then((result)=>{
+                console.log(result)
+            })
         }
     }
     render(){
