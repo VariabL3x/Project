@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 export default class RegisterForm extends React.Component{
     constructor(props){
@@ -9,7 +10,8 @@ export default class RegisterForm extends React.Component{
             username:"",
             email:"",
             password:"",
-            confirm_password:""
+            confirm_password:"",
+            signedUp:false
         }
     }
     handleChange = (e) =>{
@@ -24,25 +26,33 @@ export default class RegisterForm extends React.Component{
 
     handleSubmit = (e) => {
         if(this.state.password === this.state.confirm_password){
+            e.preventDefault()
             let formData = new FormData()
-            formData.set('email',this.state.email)
             formData.set('username',this.state.username)
+            formData.set('email',this.state.email)
             formData.set('password',this.state.password)
             axios({
                 method:"POST",
-                url:"http://localhost:5000/api/v1/users/",
+                url:"http://localhost:5000/api/v1/users/new",
                 data:formData,
                 config: { headers : {'Content-Type' : 'multipart/form-data'}}
             }).then((result)=>{
-                console.log(result)
+                if(result.data.status){
+                    this.setState({signedUp:true})
+                }
             })
         }
     }
     render(){
+        if (this.state.signedUp) {
+            return (
+                <Redirect to="/login"/>
+            )
+        }
         return(
-            <form className="register-form-box">
+            <form onSubmit={this.handleSubmit}className="register-form-box">
                 <label>Username</label>
-                <input type="text" name="useranme" onChange={this.handleChange}/>
+                <input type="text" name="username" onChange={this.handleChange}/>
 
                 <label>Email</label>
                 <input type="email" name="email" onChange={this.handleChange}/>
