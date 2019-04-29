@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 export default class LoginForm extends React.Component{
     constructor(props){
@@ -7,7 +8,9 @@ export default class LoginForm extends React.Component{
 
         this.state = {
             username:"",
-            password:''
+            password:'',
+            login:false,
+            current_user:""
         }
     }
 
@@ -36,11 +39,24 @@ export default class LoginForm extends React.Component{
             config: { headers:{'Content-Type': 'multipart/form-data'}}
         }).then(result=>{
             if(result.data.status){
+                sessionStorage.setItem('id', result.data.data.id)
+                sessionStorage.setItem('username',result.data.data.username)
+                this.setState({
+                    login:true,
+                    current_user:sessionStorage.getItem('username')
+                })
+                
+                
                 
             }
         })
     }
     render(){
+        if(this.state.login){
+            return(
+                <Redirect push to={"/"+this.state.current_user}/>
+            )
+        }
         return(
             <form className="login-form-box" onSubmit={this.handleSubmit}>
                 <label>Username</label>

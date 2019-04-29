@@ -5,8 +5,10 @@ import Homepage from '../pages/Homepage'
 import Register from '../pages/RegisterPage'
 import Login from '../pages/LoginPage'
 
-const Main = () => (
-    <Router>
+class Main extends React.Component{
+    render(){
+        return(
+            <Router>
         <Route exact strict path = "/"
             component = {props =>{
             return(
@@ -24,12 +26,47 @@ const Main = () => (
         <Route exact strict path = "/login"
             component = {props =>{
             return(
-                <Login {...props}/>
+                <Login {...props} />
             )
             }}
         />
+        <Route exact strict path = "/:username"
+            component = {props =>{
+                return(
+                    <Homepage {...props}/>
+                )
+            }}
+        />
     </Router>
-)
+        )
+    }
+}
+    
+    // <Router>
+    //     <Route exact strict path = "/"
+    //         component = {props =>{
+    //         return(
+    //             <Homepage {...props}/>
+    //         )
+    //         }}
+    //     />
+    //     <Route exact strict path = "/register"
+    //         component = {props =>{
+    //         return(
+    //             <Register {...props}/>
+    //         )
+    //         }}
+    //     />
+    //     <Route exact strict path = "/login"
+    //         component = {props =>{
+    //         return(
+    //             <Login {...props}/>
+    //         )
+    //         }}
+    //     />
+    // </Router>
+    
+
 
 export default Main
 
