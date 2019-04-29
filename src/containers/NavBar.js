@@ -1,7 +1,6 @@
 import React from 'react'
 import { Layout,Header,Navigation } from 'react-mdl'
 import '../App.css'
-import axios from 'axios';
 export default class NavBar extends React.Component{
     constructor(props){
         super(props)
@@ -21,6 +20,7 @@ export default class NavBar extends React.Component{
         console.log(this.state)
     }
     
+
     handleLogout = (e) =>{
         sessionStorage.clear()
     }

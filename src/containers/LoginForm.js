@@ -9,7 +9,7 @@ export default class LoginForm extends React.Component{
         this.state = {
             username:"",
             password:'',
-            login:false,
+            redirect:false,
             current_user:""
         }
     }
@@ -42,7 +42,7 @@ export default class LoginForm extends React.Component{
                 sessionStorage.setItem('id', result.data.data.id)
                 sessionStorage.setItem('username',result.data.data.username)
                 this.setState({
-                    login:true,
+                    redirect:true,
                     current_user:sessionStorage.getItem('username')
                 })
                 
@@ -52,7 +52,7 @@ export default class LoginForm extends React.Component{
         })
     }
     render(){
-        if(this.state.login){
+        if(this.state.redirect){
             return(
                 <Redirect push to={"/"+this.state.current_user}/>
             )
