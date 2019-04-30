@@ -39,11 +39,14 @@ export default class LoginForm extends React.Component{
             config: { headers:{'Content-Type': 'multipart/form-data'}}
         }).then(result=>{
             if(result.data.status){
-                sessionStorage.setItem('id', result.data.data.id)
-                sessionStorage.setItem('username',result.data.data.username)
+                console.log(result.data)
+                localStorage.setItem('id', result.data.data.id)
+                localStorage.setItem('username',result.data.data.username)
+                localStorage.setItem('token',result.data.access_token)
+                localStorage.setItem('refresh_tok',result.data.refresh_token)
                 this.setState({
                     redirect:true,
-                    current_user:sessionStorage.getItem('username')
+                    current_user:localStorage.getItem('username')
                 })
                 
                 

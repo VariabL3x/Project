@@ -11,9 +11,9 @@ export default class NavBar extends React.Component{
         }
     }
     componentDidMount(){
-        if(sessionStorage.getItem('id')){
+        if(localStorage.getItem('id')){
             this.setState({
-                current_user:sessionStorage.getItem('username'),
+                current_user:localStorage.getItem('username'),
                 isLogin:true
             })
         }
@@ -21,7 +21,7 @@ export default class NavBar extends React.Component{
     
 
     handleLogout = (e) =>{
-        sessionStorage.clear()
+        localStorage.clear()
     }
     render(){
         const userLinks = (

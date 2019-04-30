@@ -4,9 +4,18 @@ import { Route } from 'react-router-dom';
 import Homepage from '../pages/Homepage'
 import Register from '../pages/RegisterPage'
 import Login from '../pages/LoginPage'
-import Post from '../pages/PostPage'
+import Post from '../pages/Post'
 
 class Main extends React.Component{
+    constructor(props){
+        super(props)
+
+        this.state = {
+            
+        }
+    }
+
+
     render(){
         return(
             <Router>
