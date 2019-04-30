@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Homepage from '../pages/Homepage'
 import Register from '../pages/RegisterPage'
 import Login from '../pages/LoginPage'
+import Post from '../pages/PostPage'
 
 class Main extends React.Component{
     render(){
@@ -34,6 +35,13 @@ class Main extends React.Component{
             component = {props =>{
                 return(
                     <Homepage {...props}/>
+                )
+            }}
+        />
+        <Route exact strict path = "/user/:username/post"
+            component = {props =>{
+                return(
+                    <Post {...props}/>
                 )
             }}
         />
