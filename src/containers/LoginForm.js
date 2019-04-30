@@ -54,7 +54,7 @@ export default class LoginForm extends React.Component{
     render(){
         if(this.state.redirect){
             return(
-                <Redirect push to={"/"+this.state.current_user}/>
+                <Redirect push to={"/user/"+this.state.current_user}/>
             )
         }
         return(

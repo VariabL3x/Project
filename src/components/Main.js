@@ -30,7 +30,7 @@ class Main extends React.Component{
             )
             }}
         />
-        <Route exact strict path = "/:username"
+        <Route exact strict path = "/user/:username"
             component = {props =>{
                 return(
                     <Homepage {...props}/>

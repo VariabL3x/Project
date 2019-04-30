@@ -17,7 +17,6 @@ export default class NavBar extends React.Component{
                 isLogin:true
             })
         }
-        console.log(this.state)
     }
     
 
@@ -28,9 +27,9 @@ export default class NavBar extends React.Component{
         const userLinks = (
             <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>is log in</strong></span>}>
                 <Navigation>
-                    <a href={`/${this.state.current_user}`}><strong>Home</strong></a>
-                    <a href={`/${this.state.current_user}/post`}><strong>Post</strong></a>
-                    <a href={`/${this.state.current_user}/account`}><strong>Account</strong></a>
+                    <a href={`/user/${this.state.current_user}`}><strong>Home</strong></a>
+                    <a href={`/user/${this.state.current_user}/post`}><strong>Post</strong></a>
+                    <a href={`/user/${this.state.current_user}/account`}><strong>Account</strong></a>
                     <a href="/" onClick={this.handleLogout}><strong>Logout</strong></a>
                 </Navigation>
             </Header>
