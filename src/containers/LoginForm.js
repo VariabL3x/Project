@@ -39,7 +39,6 @@ export default class LoginForm extends React.Component{
             config: { headers:{'Content-Type': 'multipart/form-data'}}
         }).then(result=>{
             if(result.data.status){
-                console.log(result.data)
                 localStorage.setItem('id', result.data.data.id)
                 localStorage.setItem('username',result.data.data.username)
                 localStorage.setItem('token',result.data.access_token)

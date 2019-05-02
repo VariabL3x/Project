@@ -134,10 +134,12 @@
 
 }
 
-.blog-post h2{
+.blog-post a{
     margin-left:20px;
     font-family: Raleway;
     margin-right:20px;
+    font-size: 3em;
+    text-decoration: none;
 
 }
 
@@ -154,9 +156,13 @@
 
 .aside {
     width: 500px;
-    height: 250px;
+    height: 270px;
     padding:0;
     margin-top:25px;
+    position: absolute;
+    right:-100px;
+    
+    
 }
 
 .aside h4 {
@@ -199,4 +205,17 @@
     font-size:24px;
     font-family: Raleway;
     height:300px;
+}
+
+.close-button{
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 415px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: maroon;
+    border: 1px solid transparent;
+    border-radius: 100%;
 }
