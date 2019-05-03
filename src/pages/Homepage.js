@@ -19,7 +19,7 @@ export default class Homepage extends React.Component{
     componentDidMount(){
         Promise.all([
             axios.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=c0e57ee7cb6843b083672905190105&q=Kuala Lumpur&format=json&num_of_days=1"),
-            axios.get("http://localhost:5000/api/v1/blogs/")
+            axios.get("https://fathomless-gorge-77532.herokuapp.com/api/v1/blogs/")
         ]).then(results=>{
             this.setState({
                 city:results[0].data.data.request[0].query,

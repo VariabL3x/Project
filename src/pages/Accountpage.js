@@ -16,7 +16,7 @@ export default class Account extends React.Component{
 
     getUserData(){
         let user_id = localStorage.getItem('id')
-        axios.get("http://localhost:5000/api/v1/users/"+user_id+"/show")
+        axios.get("https://fathomless-gorge-77532.herokuapp.com/api/v1/users/"+user_id+"/show")
         .then(result=>{
             
             this.setState({
@@ -39,7 +39,7 @@ export default class Account extends React.Component{
         formData.append('username', this.state.username)
         formData.append('password', this.state.password)
 
-        axios.post("http://localhost:5000/api/v1/users/edit", formData, {
+        axios.post("https://fathomless-gorge-77532.herokuapp.com/api/v1/users/edit", formData, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token'),
                 'Content-Type': 'multipart/form-data'

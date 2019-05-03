@@ -29,7 +29,7 @@ export default class Post extends React.Component{
             formData.append('desc',this.state.desc)
             axios({
                 method:"POST",
-                url:"http://localhost:5000/api/v1/blogs/new",
+                url:"https://fathomless-gorge-77532.herokuapp.com/api/v1/blogs/new",
                 data:formData,
                 headers: {
                     'Authorization' : 'Bearer ' + localStorage.getItem("token"),
