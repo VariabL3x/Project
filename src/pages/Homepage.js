@@ -21,7 +21,6 @@ export default class Homepage extends React.Component{
             axios.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=c0e57ee7cb6843b083672905190105&q=Kuala Lumpur&format=json&num_of_days=1"),
             axios.get("http://localhost:5000/api/v1/blogs/")
         ]).then(results=>{
-            console.log(results[0].data.data.weather[0].date)
             this.setState({
                 city:results[0].data.data.request[0].query,
                 weatherdesc:results[0].data.data.current_condition[0].weatherDesc[0].value,

@@ -219,3 +219,18 @@
     border: 1px solid transparent;
     border-radius: 100%;
 }
+
+.edit-button{
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 460px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: maroon;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    height: 33px;
+}
+

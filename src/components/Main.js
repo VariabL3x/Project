@@ -7,6 +7,7 @@ import Login from '../pages/LoginPage'
 import Post from '../pages/Post'
 import Blog from '../containers/Blog'
 import Account from '../pages/Accountpage';
+import Edit from './Edit';
 
 class Main extends React.Component{
     constructor(props){
@@ -60,6 +61,13 @@ class Main extends React.Component{
             component = {props =>{
                 return(
                     <Blog {...props}/>
+                )
+            }}
+        />
+        <Route exact strict path = "/blog/:blogtitle/edit"
+            component = {props =>{
+                return(
+                    <Edit {...props}/>
                 )
             }}
         />

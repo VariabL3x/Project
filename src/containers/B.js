@@ -12,7 +12,9 @@ export default class B extends React.Component{
             blog_parent_user:"",
             blog_desc:"",
             blog_id:"",
-            redirect:false
+            redirect:false,
+            current_user:"",
+            check:false,
         }
     }
     componentDidMount(){
@@ -21,7 +23,8 @@ export default class B extends React.Component{
             this.setState({
                 blog_parent_user:result.data.data.parent_user,
                 blog_desc:result.data.data.desc,
-                blog_id:result.data.data.id
+                blog_id:result.data.data.id,
+                current_user:localStorage.getItem('username')
             })
         })
     }
@@ -49,9 +52,14 @@ export default class B extends React.Component{
         return(
             <>
                 <Col lg={9} className="d-flex justify-content-center align-items-center">
-                    <Form onSubmit={this.handleDelete}>
-                        <Button type="submit" color='danger' className='close-button px-3'>X</Button>
-                    </Form>
+                    {this.state.current_user === this.state.blog_parent_user? 
+                        <>
+                            <Form onSubmit={this.handleDelete}>
+                                <Button type="submit" color='danger' className='close-button px-3'>X</Button>
+                            </Form>
+                            <Button color='success' className="edit-button" href={"/blog/"+this.state.blog_title+"/edit"}>Edit</Button>
+                        </>:
+                    null}
                     <div className="blog-post shadow">
                         <h4>{this.state.blog_parent_user}</h4>
                         <a href={`/blog/${this.state.blog_title}`}>{this.state.blog_title}</a>
