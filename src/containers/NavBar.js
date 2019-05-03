@@ -25,7 +25,7 @@ export default class NavBar extends React.Component{
     }
     render(){
         const userLinks = (
-            <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>is log in</strong></span>}>
+            <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Blog / </span><strong>Loged In</strong></span>}>
                 <Navigation>
                     <a href={`/user/${this.state.current_user}`}><strong>Home</strong></a>
                     <a href={`/user/${this.state.current_user}/post`}><strong>Post</strong></a>
@@ -36,7 +36,7 @@ export default class NavBar extends React.Component{
         )
 
         const guestLinks = (
-            <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>not logged in</strong></span>}>
+            <Header className="header-color" title={<span><span style={{ color: '#ddd' }}>Blog / </span><strong>Not Logged In</strong></span>}>
                 <Navigation>
                     <a href="/"><strong>Home</strong></a>
                     <a href="/login"><strong>Login</strong></a>
