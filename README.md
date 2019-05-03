@@ -1,4 +1,7 @@
-
+### Before npm start
+-Git clone the repo
+-cd into the repo
+-do 'npm install'  to install all the packages 
 
 ### `npm start`
 
